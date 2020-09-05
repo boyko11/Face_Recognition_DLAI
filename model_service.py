@@ -43,7 +43,7 @@ class ModelService:
 
     # GRADED FUNCTION: verify
     @staticmethod
-    def verify(image_path, identity, database, FRmodel):
+    def verify(image_path, identity, database, model):
         """
         Function that verifies if the person on the "image_path" image is "identity".
 
@@ -59,7 +59,7 @@ class ModelService:
         """
 
         # Step 1: Compute the encoding for the image. Use img_to_encoding() see example above. (≈ 1 line)
-        encoding = fr_utils.img_to_encoding(image_path, FRmodel)
+        encoding = fr_utils.img_to_encoding(image_path, model)
 
         # Step 2: Compute distance with identity's image (≈ 1 line)
         dist = np.sqrt(np.sum(np.square(encoding - database[identity])))
